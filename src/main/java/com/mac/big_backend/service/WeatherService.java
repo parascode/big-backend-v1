@@ -32,10 +32,10 @@ public class WeatherService {
             try {
                 log.info((String) cachedResponse);
                 WeatherResponse response = mapper.readValue(cachedResponse.toString(), WeatherResponse.class);
-                log.info("got value from redis cache, {}, {}", city, response);
+                log.info("got value from redis cached data, {}, {}", city, response);
                 return response;
             }catch (Exception e){
-                log.error("Error reading from redis cache: {}", e.getMessage());
+                log.error("Error reading from redis cached data: {}", e.getMessage());
                 return null;
             }
         }
